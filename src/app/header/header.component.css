@@ -1,0 +1,55 @@
+header {
+    width: 100%;
+    background-color: #014599;
+    font-family: sans-serif;
+}
+
+ul {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 20px;
+}
+
+ul li:hover {
+    background: #ec2266;
+    cursor: pointer;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+.toggle {
+    width: 100%;
+    padding: 10px 20px;
+    background: #001f44;
+    color: #fff;
+    display: none;
+}
+.BrandLogo {
+    width: 50px; 
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 768px) {
+    .toggle {
+        display: block;
+    }
+
+    ul {
+        width: 100%;
+        display: none;
+    }
+    ul li {
+        display: block;
+    }
+    .active {
+        display: block;
+    }
+}

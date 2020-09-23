@@ -1,0 +1,12 @@
+.has-error {
+    color: red;
+    /* background-color: red; */
+    /* border: red; */
+}
+.has-error input{
+    border-color: #DC143C;
+}
+button.disabled,
+button[disabled] {
+    cursor: not-allowed;
+}

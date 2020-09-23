@@ -1,0 +1,7 @@
+<form (ngSubmit)="registerCusomer()">
+    <app-address [parentForm]="primaryAddress" 
+                formControlName="primaryAddress" 
+                #primaryAddress>
+    </app-address>
+    <button class="btn-primary" type="submit">Subimit</button>
+</form>

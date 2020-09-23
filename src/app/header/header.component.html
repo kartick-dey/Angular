@@ -1,0 +1,51 @@
+<header>
+    <div class="toggle">
+        <i class="fa fa-bars fa-2x" (click)="toggleButton()"></i>
+        <!-- <img src="../assets/logo.png" alt="image" class="BrandLogo"> -->
+    </div>
+    <div>
+        <ul [ngClass]="{'active': toggleButtonStatus}">
+            <li *ngIf="isAuthenticated">
+                <a routerLinkActive="active" routerLink="/registration">Registration</a>
+            </li>
+            <li *ngIf="isAuthenticated">
+                <a routerLinkActive="active" routerLink="/employee-details">View Employee</a>
+            </li>
+            <li>
+                <a routerLinkActive="active" routerLink="/login">Login</a>
+            </li>
+            <li *ngIf="!isAuthenticated">
+                <a routerLinkActive="active" routerLink="/auth">Sign In</a>
+            </li>
+            <li *ngIf="isAuthenticated">
+                <a (click)="onLogout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</header>
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <img src="../assets/logo.png" alt="image" class="BrandLogo">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active" *ngIf="isAuthenticated">
+                <a class="nav-link" routerLinkActive="active" routerLink="/registration">Registration</a>
+            </li>
+            <li class="nav-item" *ngIf="isAuthenticated">
+                <a class="nav-link" routerLinkActive="active" routerLink="/employee-details">UsersDetails</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" routerLinkActive="active" routerLink="/auth" *ngIf="!isAuthenticated">Sign In</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" style="cursor: pointer;" *ngIf="isAuthenticated"
+                (click)="onLogout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav> -->

@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root{
+    --font-family: 'Roboto', sans-serif;
+}
+
+
+/* left col div styling and setting background */
+.left-col {
+    background: url('../../assets/backgroundImage03.jpg') center no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+/* Right col div styling */
+.right-col {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(245, 241, 238);
+}
+
+/* Form container styling */
+.form-box {
+    display: flex;
+    flex-direction: column;
+    top: 30px;
+    min-height: 100vh;
+    min-width: 100%;
+}
+
+/* Avatar styling */
+.avatar {
+    width: 100px;
+    border-radius: 50%;
+}
+
+/* Form title stying */
+.title h2 {
+    font-weight: bold;
+    color: black;
+    font-family: var(--font-family);
+}
+
+/* Form container input div styling */
+.form-box .form-input {
+    position: relative;
+}
+
+/* Form conatainer input field styling */
+.form-box .form-input input {
+    width: 80%;
+    height: 40px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    border: 1px solid #268867;
+    border-radius: 0px;
+    outline: none;
+    background: transparent;
+    padding-left: 45px;
+}
+
+/* Form container fontawsome styling */
+.form-box .form-input i {
+    position: absolute;
+    top: 17px;
+    padding-left: 20px;
+    color: #32be8f;
+}
+
+/* Error styling in input field */
+.form-box .has-error input {
+    border: 1px solid red;
+}
+
+/* Error styling in Fontawsome tag */
+.form-box .has-error i {
+    color: red;
+}
+
+/* Form Input placeholder styling */
+.form-box .form-input::placeholder{
+    padding-left: 0;
+}
+
+/* Show Password checkbox CSS */
+.form-box .custom-checkbox .custom-control-input:checked ~ custom-control-label::before{
+    background-color: red;
+    border: 0px;
+}
+
+/* Error mesaage styling in span tag */
+.error-message {
+    color: rgb(209, 7, 7);
+    font-size: small;
+    font-weight: bold;
+}
+
+
+/* Submit button styling */
+.submit-btn {
+    width: 60%;
+    height: 40px;
+    cursor: pointer;
+    margin: 1rem;
+    padding: 0.2rem;
+    border: none;
+    border-radius: 3rem;
+    background-color: #38d39f;
+    background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+/* Submit button Hover Styling */
+.submit-btn:hover {
+    -webkit-box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+    -moz-box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+    box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.55);
+}
+
+/* Submit Button disabled styling */
+.submit-btn.disabled,
+.submit-btn[disabled] {
+    cursor: not-allowed;
+    background-image: linear-gradient(to right,#77ddbb, #abe7d3);
+    background-color: #b2f1dc;
+}
+
+/* Forget password link styling */
+.forget-link {
+    cursor: pointer;
+    /* font-weight: bold; */
+    color: black;
+}
+
+/* Forget password link over styling */
+.forget-link:hover {
+    color: #32be8f;
+}
+
+/* Loading spinner styling */
+.spinner {
+        text-align: center;
+}
+
+/* Medium devices (mobile, landscape phones, tablets and other device upto screen size 768px) */
+@media screen and (max-width: 768px) {
+    /* Left div not visible styling for mobile view */
+    .left-col {
+        display: none;
+    }
+
+    /* Right div styling and setting background image */
+    .right-col {
+        background: url('../../assets/backgroundImage03.jpg') center no-repeat;
+        background-size: cover;
+    }
+
+    .form-box .title h2 {
+        color: white;
+    }
+
+    /* Form conatiner input field styling */
+    .form-box .form-input input {
+        border: 2px solid #268867;
+        background: rgb(247, 245, 245);
+    }
+
+    /* Form conatiner error input field styling */
+    .form-box .has-error input {
+        border: 1px solid red;
+    }
+
+    /* Show password label styling */
+    .showPassword-label {
+        color: white;
+    }
+
+    /* Error message styling */
+    .error-message {
+        font-weight: normal;
+    }
+
+    /* Forget Password link styling */
+    .forget-link {
+        color: white;
+    }
+}
+
+
+

@@ -1,0 +1,16 @@
+.has-error {
+    color: red;
+}
+.has-error input{
+    border-color: #DC143C;
+}
+
+.fa-eye-slash:hover,
+.fa-eye:hover {
+  cursor: pointer;
+}
+
+button.disabled,
+button[disabled] {
+    cursor: not-allowed;
+}

@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- Left Side column with Image background -->
+        <div class="col-lg-6 col-md-6 left-col"></div>
+
+        <!-- Right Side Column with Login Form -->
+        <div class="col-lg-6 col-md-6 right-col">
+            <div class="col-lg-8 col-md-12 col-sm-9 col-xs-12 form-box text-center">
+                <form [formGroup]="loginForm" (ngSubmit)="onSubmit($event)">
+                    <img class="avatar" src="../../assets/avatar.jpg" alt="avater">
+                    <div class="mb-4 mt-1 title">
+                        <h2>Welcome to cXimera</h2>
+                    </div>
+                    <div class="alert alert-danger errorAlert" *ngIf="authMessage">
+                        <p>{{authMessage}}</p>
+                    </div>
+                    <div *ngIf="isLoading" class="spinner">
+                        <app-loading-spinner></app-loading-spinner>
+                    </div>
+                    <div *ngIf="!isLoading">
+                        <div class="form-input" [ngClass]="{'has-error': fieldErrors.email}">
+                            <i class="fa fa-user"></i>
+                            <input type="text" formControlName="email" placeholder="Email" class="input-field"
+                                (blur)="logValidationErrors()"><br />
+                            <span class="error-message" *ngIf="fieldErrors.email">{{fieldErrors.email}}</span>
+                        </div>
+                        <div class="form-input" [ngClass]="{'has-error': fieldErrors.password}">
+                            <i class="fa fa-lock"></i>
+                            <input [type]="passwordFieldTextType ? 'text' : 'password'" formControlName="password" placeholder="Password"
+                                class="input-field" (blur)="logValidationErrors()"><br />
+                            <span class="error-message" *ngIf="fieldErrors.password">{{fieldErrors.password}}</span>
+                        </div>
+                        <div class="ml-4 text-left">
+                            <div class="custom-control custom-checkbox ml-4">
+                                &nbsp;<input type="checkbox" class="custom-control-input" id="showPassword" formControlName="showPassword">
+                                <label for="showPassword" class="custom-control-label showPassword-label">Show
+                                    Password</label>
+                            </div>
+                        </div>
+                        <button [disabled]="loginForm.invalid" class="submit-btn" type="submit">Login</button>
+                        <div class="text-center">
+                            <a routerLink="/forget-password" class="forget-link">Forget Password?</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

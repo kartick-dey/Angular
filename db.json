@@ -1,0 +1,108 @@
+{
+  "clusterUsername": [
+    {
+      "username": "k3dey"
+    }
+  ],
+  "user": [
+    {
+      "fullName": "Kartick Dey",
+      "password": "Ka@1995",
+      "address": {
+        "street": "Vill - Puncha",
+        "city": "Bishnupur",
+        "state": "West Bengali",
+        "country": "India",
+        "postalCode": "722144"
+      },
+      "otpPreference": "9330646544",
+      "id": 1
+    },
+    {
+      "fullName": "Kartick Dey",
+      "password": "Ka@199",
+      "address": {
+        "street": "<script>alert(\"Hi\")</script>",
+        "city": "Bishnupur",
+        "state": "West Bengali",
+        "country": "India",
+        "postalCode": "722144"
+      },
+      "otpPreference": "9330646544",
+      "id": 2
+    },
+    {
+      "fullName": "Kartick Dey",
+      "password": "Ka@199",
+      "address": {
+        "street": "<img src=\"\" onMouse",
+        "city": "Bishnupur",
+        "state": "West Bengali",
+        "country": "India",
+        "postalCode": "722144"
+      },
+      "otpPreference": "9330646544",
+      "id": 3
+    },
+    {
+      "fullName": "Kartick Dey",
+      "password": "Ka@1995",
+      "address": {
+        "street": "<img src=x onMouseOver=alert(\"Hi\") />",
+        "city": "Bishnupur",
+        "state": "West Bengali",
+        "country": "India",
+        "postalCode": "722144"
+      },
+      "otpPreference": "9330646544",
+      "id": 4
+    },
+    {
+      "fullName": "Kartick Dey",
+      "password": "Ka@199",
+      "address": {
+        "street": "Vill - Puncha",
+        "city": "Bishnupur",
+        "state": "West Bengali",
+        "country": "India",
+        "postalCode": "722144"
+      },
+      "otpPreference": "9330646544",
+      "id": 5
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "code": "emp101",
+      "name": "Tom",
+      "gender": "Male",
+      "salary": "5500",
+      "dateOfBirth": "6/25/1998"
+    },
+    {
+      "id": 2,
+      "code": "emp102",
+      "name": "Alex",
+      "gender": "Male",
+      "salary": "5700.95",
+      "dateOfBirth": "9/6/1982"
+    },
+    {
+      "id": 3,
+      "code": "emp103",
+      "name": "Mike",
+      "gender": "Male",
+      "salary": "5900",
+      "dateOfBirth": "12/8/1979"
+    },
+    {
+      "id": 4,
+      "code": "emp104",
+      "name": "Mary",
+      "gender": "Female",
+      "salary": "6500.826",
+      "dateOfBirth": "10/14/1980"
+    }
+  ]
+}

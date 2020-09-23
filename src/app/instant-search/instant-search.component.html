@@ -1,0 +1,39 @@
+<form [formGroup]="searchForm">
+    <div class="card">
+        <div class="card-header">Instant Search</div>
+        <div class="row card-body">
+            <div class="form-group col-sm-8" [ngClass]="{'has-error': searchForm.get('searchBox').errors &&
+                                                            (searchForm.get('searchBox').touched || searchForm.get('searchBox').dirty)}">
+                <input type="text" id="searchBox" formControlName="searchBox" class="form-control">
+                    <span class="help-block" style="font-size: small;" *ngIf="searchForm.get('searchBox').errors &&
+                                                            (searchForm.get('searchBox').touched || searchForm.get('searchBox').dirty)">
+                        <span *ngIf="searchForm.get('searchBox').errors">Text input is required</span>
+                    </span>
+            </div>
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>        
+    </div>
+</form>
+
+<div *ngIf="relatedTopics && !searchRelatedError; else elseBlock">
+<!-- //trackby -->
+<ng-container *ngFor="let relatedTopic of relatedTopics;let i = index"> 
+    <ng-container *ngFor="let relatedTopicItem of relatedTopic">
+        <div class="card" style="width: 40%; left: 20%;" *ngIf="relatedTopicItem">
+            <ng-container *ngIf="relatedTopicItem.Icon && relatedTopicItem.Icon.URL">
+                <img src="{{ relatedTopicItem.Icon.URL }}" class="card-img-top" alt="{{i}}">
+            </ng-container>            
+            <div class="card-body">
+                <h5 class="card-title">{{relatedTopicItem.Result}}</h5>
+                <p class="card text">{{relatedTopicItem.Text}}</p>
+                <a href="{{ relatedTopicItem.FirstURL}}" class="btn btn-primary">Open Original Link</a>
+            </div>
+        </div>
+    </ng-container>
+</ng-container>
+</div>
+<ng-template #elseBlock>
+    <h3 style="text-align: center;">{{searchRelatedError}}</h3>
+</ng-template>

@@ -1,0 +1,93 @@
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Search by Name" [(ngModel)]="searchTerm">
+</div>
+<button class="btn btn-primary" (click)="changeName()">Change Name</button>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td colspan="5" class="tableHeader">Custom Filter Pipe used Table</td>
+        </tr>
+        <tr>
+            <th>Sl No.</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users | userFilter:searchTerm; let i = index">
+            <td class="tableRow">{{i + 1}}</td>
+            <td>{{user.fullName}}</td>
+            <td>{{user.otpPreference}}</td>
+            <td>{{user.address.street}}, {{user.address.city}}, 
+                {{user.address.state}}, {{user.address.country}}, 
+                {{user.address.postalCode}}</td>
+        </tr>
+        <tr *ngIf="!users || users['length'] == 0">
+            <td colspan="5" class="tableRow" *ngIf="serverError; else elseblock">{{ serverError }}</td>
+            <ng-template #elseblock>
+                <td colspan="5" class="tableRow">No data to display</td>
+            </ng-template>
+        </tr>
+    </tbody>
+</table>
+<hr>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td colspan="5" class="tableHeader">Async Pipe uesd Table</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Salary</th>
+            <th>Date of Birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <ng-container *ngIf="employeesAsync | async as employeesAsyncData; else loadingError">
+            <tr *ngFor="let employeeAsync of employeesAsyncData">
+                <td>{{employeeAsync.code}}</td>
+                <td>{{employeeAsync.name}}</td>
+                <td>{{employeeAsync.gender}}</td>
+                <td>{{employeeAsync.salary}}</td>
+                <td>{{employeeAsync.dateOfBirth | date:"fullDate"}}</td>
+            </tr>
+        </ng-container>
+        <ng-template #loadingError>
+            <tr>
+                <td colspan="5" class="tableRow">Server error</td>
+            </tr>
+        </ng-template>
+    </tbody>
+</table>
+<hr>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td colspan="5" class="tableHeader">trackBy used Table</td>
+        </tr>
+        <tr>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Salary</th>
+            <th>Date of Birth</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employeeTrackBy of employeeTrackBy; trackBy:tractByEmpCode">
+            <td>{{employeeTrackBy.code}}</td>
+            <td>{{employeeTrackBy.name | employeeTitle:employeeTrackBy.gender}}</td>
+            <td>{{employeeTrackBy.gender}}</td>
+            <td>{{employeeTrackBy.salary}}</td>
+            <td>{{employeeTrackBy.dateOfBirth | date:"fullDate"}}</td>
+        </tr>
+        <tr *ngIf="serverError">
+            <td colspan="5" class="tableRow">{{ serverError }}</td>
+        </tr>
+    </tbody>
+</table>
+<button class="btn btn-primary" (click)="addEmployees()">Refresh Employee</button>

@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row" style="text-align: -webkit-center;">
+        <div class="col-md-12">
+            <h2>Social Login System</h2>
+            <button class="btn btn-primary"
+                    style="background-color: #386998; border-color: #386998;"
+                    (click)="signInWithFB()">
+                    <i class="fa fa-facebook"></i>Facebook
+            </button> |
+            <button class="btn btn-primary" 
+                    style="background-color: #C63D2D; border-color: #C63D2D;"
+                    (click)="signInWithGoogle()">
+                    <i class="fa fa-google"></i>Google
+            </button>
+        </div>
+        <div *ngIf="user" class="col-md-12" style="text-align: -webkit-center;">
+            <div class="card" style="width: 20rem; margin: 20px 0 24px 0; text-align: -webkit-center;">
+                <img [src]="" alt="image" style="width: 200px; border-radius: 50%; margin-top: 10px">
+                <div class="card-body">
+                    <h4 class="card-title"></h4>
+                    <p class="card-text"></p>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-danger" (click)="signOut()">Sign out</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
